@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Repository:repository xmlns:Repository="http://www.tibco.com/xmlns/repo/types/2002">
+    <identity>
+        <objectType>usernamePassword</objectType>
+        <name>Identity</name>
+        <designer>
+            <lockedProperties/>
+            <fixedChildren/>
+            <resourceDescriptions/>
+        </designer>
+        <username>solace-cloud-client</username>
+        <password>#!MP/ne49Dm5U84bTbVxyvQW9o+RrkefVLE25D6isPrr09qh3lJxnRv1LsozKC3L4nt76zlVJwDOQwob7OY8aR9w==</password>
+    </identity>
+</Repository:repository>

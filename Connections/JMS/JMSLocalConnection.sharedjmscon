@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource>
+    <name>JMSLocalConnection</name>
+    <resourceType>ae.shared.JMSConnectionKey</resourceType>
+    <config>
+        <NamingEnvironment>
+            <UseJNDI>true</UseJNDI>
+            <ProviderURL>tcps://mrg9g17sor7sy.messaging.solace.cloud:55443</ProviderURL>
+            <NamingURL>tcp://localhost:55555</NamingURL>
+            <NamingInitialContextFactory>com.solacesystems.jndi.SolJNDIInitialContextFactory</NamingInitialContextFactory>
+            <TopicFactoryName>LocalFactory</TopicFactoryName>
+            <QueueFactoryName>LocalFactory</QueueFactoryName>
+            <NamingPrincipal>default</NamingPrincipal>
+            <NamingCredential/>
+        </NamingEnvironment>
+        <ConnectionAttributes>
+            <username>default</username>
+            <password/>
+            <clientID/>
+            <autoGenClientID>true</autoGenClientID>
+            <useUFO>false</useUFO>
+        </ConnectionAttributes>
+        <UseXACF>false</UseXACF>
+        <useSsl>false</useSsl>
+        <UseSharedJndiConfig>false</UseSharedJndiConfig>
+        <AdmFactorySslPassword/>
+        <ns0:ssl xmlns:ns0="http://www.tibco.com/xmlns/aemeta/services/2002">
+            <ns0:trace>true</ns0:trace>
+            <ns0:debugTrace>true</ns0:debugTrace>
+            <ns0:verifyHostName>true</ns0:verifyHostName>
+            <ns0:strongCipherSuitesOnly>true</ns0:strongCipherSuitesOnly>
+            <ns0:cert isRef="true">/.folder</ns0:cert>
+        </ns0:ssl>
+        <JNDIProperties>
+            <row>
+                <Name>Solace_JMS_VPN</Name>
+                <Type>string</Type>
+                <Value>nareshLocal</Value>
+            </row>
+        </JNDIProperties>
+    </config>
+</BWSharedResource>

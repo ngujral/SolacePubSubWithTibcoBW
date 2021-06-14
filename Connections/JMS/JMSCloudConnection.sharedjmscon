@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource>
+    <name>JMSCloudConnection</name>
+    <resourceType>ae.shared.JMSConnectionKey</resourceType>
+    <config>
+        <NamingEnvironment>
+            <UseJNDI>true</UseJNDI>
+            <ProviderURL>tcps://mrg9g17sor7sy.messaging.solace.cloud:55443</ProviderURL>
+            <NamingURL>tcps://mrg9g17sor7sy.messaging.solace.cloud:55443</NamingURL>
+            <NamingInitialContextFactory>com.solacesystems.jndi.SolJNDIInitialContextFactory</NamingInitialContextFactory>
+            <TopicFactoryName>/jms/cf/default</TopicFactoryName>
+            <QueueFactoryName>/jms/cf/default</QueueFactoryName>
+            <NamingPrincipal>solace-cloud-client</NamingPrincipal>
+            <NamingCredential>#!1shwfhSoA22fBGLrquApUFpJYV13morzQ1Rmtzfb3iAdrMXWB0stm5AzYtJgKiWzHHtWtEgFCdS5j9lZUooF7Q==</NamingCredential>
+        </NamingEnvironment>
+        <ConnectionAttributes>
+            <username>solace-cloud-client</username>
+            <password>#!MRwyGwKnQjr+yHYjFZSlyIMoFACcvIKQ+qBP94wqQh4oWxXG8Z3BKSn+SGymUwL1Un9xIuGot0Pqmx27vBzXNg==</password>
+            <clientID/>
+            <autoGenClientID>true</autoGenClientID>
+            <useUFO>false</useUFO>
+        </ConnectionAttributes>
+        <UseXACF>false</UseXACF>
+        <useSsl>true</useSsl>
+        <UseSharedJndiConfig>false</UseSharedJndiConfig>
+        <AdmFactorySslPassword/>
+        <JNDIProperties>
+            <row>
+                <Name>Solace_JMS_VPN</Name>
+                <Type>string</Type>
+                <Value>naresh</Value>
+            </row>
+        </JNDIProperties>
+        <ns0:ssl xmlns:ns0="http://www.tibco.com/xmlns/aemeta/services/2002">
+            <ns0:trace>true</ns0:trace>
+            <ns0:debugTrace>true</ns0:debugTrace>
+            <ns0:verifyHostName>true</ns0:verifyHostName>
+            <ns0:strongCipherSuitesOnly>true</ns0:strongCipherSuitesOnly>
+            <ns0:cert isRef="true">/Certs/.folder</ns0:cert>
+        </ns0:ssl>
+    </config>
+</BWSharedResource>
