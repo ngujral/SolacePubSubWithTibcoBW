@@ -36,8 +36,8 @@
     <pd:activity name="Reply to JMS Message">
         <pd:type>com.tibco.plugin.jms.JMSReplyActivity</pd:type>
         <pd:resourceType>ae.activities.JMSReplyActivity</pd:resourceType>
-        <pd:x>316</pd:x>
-        <pd:y>59</pd:y>
+        <pd:x>293</pd:x>
+        <pd:y>99</pd:y>
         <config>
             <PermittedMessageType>Text</PermittedMessageType>
             <SessionAttributes>
