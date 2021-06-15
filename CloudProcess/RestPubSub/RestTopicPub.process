@@ -15,7 +15,7 @@
         <pd:type>com.tibco.plugin.http.client.HttpRequestActivity</pd:type>
         <pd:resourceType>httppalette.httpRequest</pd:resourceType>
         <pd:x>278</pd:x>
-        <pd:y>68</pd:y>
+        <pd:y>69</pd:y>
         <config>
             <inputOutputVersion>5.3.0</inputOutputVersion>
             <newMimeSupport>true</newMimeSupport>

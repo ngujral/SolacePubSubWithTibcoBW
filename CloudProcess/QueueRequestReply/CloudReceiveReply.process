@@ -37,7 +37,7 @@
         <pd:type>com.tibco.plugin.jms.JMSReplyActivity</pd:type>
         <pd:resourceType>ae.activities.JMSReplyActivity</pd:resourceType>
         <pd:x>271</pd:x>
-        <pd:y>85</pd:y>
+        <pd:y>86</pd:y>
         <config>
             <PermittedMessageType>Text</PermittedMessageType>
             <SessionAttributes>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/namespaces/tnt/plugins/jms">
-    <pd:name>LocalProcess/RecLocalSub.process</pd:name>
+    <pd:name>LocalProcess/ReplyToCloudTopic.process</pd:name>
     <pd:startName>JMS Queue Receiver</pd:startName>
     <pd:startX>0</pd:startX>
     <pd:startY>0</pd:startY>
@@ -8,7 +8,7 @@
     <pd:starter name="JMS Queue Receiver">
         <pd:type>com.tibco.plugin.jms.JMSQueueEventSource</pd:type>
         <pd:resourceType>ae.activities.JMSQueueEventSource</pd:resourceType>
-        <pd:x>170</pd:x>
+        <pd:x>169</pd:x>
         <pd:y>82</pd:y>
         <config>
             <PermittedMessageType>Text</PermittedMessageType>
@@ -33,11 +33,11 @@
     <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1623622269322</pd:targetNamespace>
-    <pd:activity name="Reply to JMS Message">
-        <pd:type>com.tibco.plugin.jms.JMSReplyActivity</pd:type>
-        <pd:resourceType>ae.activities.JMSReplyActivity</pd:resourceType>
-        <pd:x>294</pd:x>
-        <pd:y>99</pd:y>
+    <pd:activity name="JMS Topic Publisher">
+        <pd:type>com.tibco.plugin.jms.JMSTopicPublishActivity</pd:type>
+        <pd:resourceType>ae.activities.JMSTopicPublishActivity</pd:resourceType>
+        <pd:x>302</pd:x>
+        <pd:y>78</pd:y>
         <config>
             <PermittedMessageType>Text</PermittedMessageType>
             <SessionAttributes>
@@ -49,26 +49,31 @@
                 <JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
                 <JMSExpiration>0</JMSExpiration>
                 <JMSPriority>4</JMSPriority>
-                <EventSource>JMS Queue Receiver</EventSource>
             </ConfigurableHeaders>
+            <ConnectionReference>/Connections/JMS/JMSLocalConnection.sharedjmscon</ConnectionReference>
         </config>
         <pd:inputBindings>
             <ns:ActivityInput>
+                <xsl:if test="$JMS-Queue-Receiver/ns:ActivityOutput/JMSHeaders/ns:JMSReplyTo">
+                    <destinationTopic>
+                        <xsl:value-of select="$JMS-Queue-Receiver/ns:ActivityOutput/JMSHeaders/ns:JMSReplyTo"/>
+                    </destinationTopic>
+                </xsl:if>
                 <Body>
-                    <xsl:value-of select="&quot;Yes got it&quot;"/>
+                    <xsl:value-of select="&quot;Sending back&quot;"/>
                 </Body>
             </ns:ActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:transition>
         <pd:from>JMS Queue Receiver</pd:from>
-        <pd:to>Reply to JMS Message</pd:to>
+        <pd:to>JMS Topic Publisher</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>always</pd:conditionType>
     </pd:transition>
     <pd:transition>
-        <pd:from>Reply to JMS Message</pd:from>
+        <pd:from>JMS Topic Publisher</pd:from>
         <pd:to>End</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
