@@ -9,7 +9,7 @@
         <pd:type>com.tibco.plugin.jms.JMSQueueEventSource</pd:type>
         <pd:resourceType>ae.activities.JMSQueueEventSource</pd:resourceType>
         <pd:x>169</pd:x>
-        <pd:y>82</pd:y>
+        <pd:y>85</pd:y>
         <config>
             <PermittedMessageType>Text</PermittedMessageType>
             <SessionAttributes>
@@ -36,8 +36,8 @@
     <pd:activity name="JMS Topic Publisher">
         <pd:type>com.tibco.plugin.jms.JMSTopicPublishActivity</pd:type>
         <pd:resourceType>ae.activities.JMSTopicPublishActivity</pd:resourceType>
-        <pd:x>302</pd:x>
-        <pd:y>78</pd:y>
+        <pd:x>300</pd:x>
+        <pd:y>88</pd:y>
         <config>
             <PermittedMessageType>Text</PermittedMessageType>
             <SessionAttributes>

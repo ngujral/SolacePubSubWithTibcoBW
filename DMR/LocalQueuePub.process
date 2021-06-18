@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/namespaces/tnt/plugins/jms">
-    <pd:name>LocalProcess/LocalRequestReply.process</pd:name>
+    <pd:name>DMR/LocalQueuePub.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startX>150</pd:startX>
     <pd:startY>64</pd:startY>
@@ -10,19 +10,19 @@
     <pd:endY>64</pd:endY>
     <pd:errorSchemas/>
     <pd:processVariables/>
-    <pd:targetNamespace>http://xmlns.example.com/1623556771635</pd:targetNamespace>
+    <pd:targetNamespace>http://xmlns.example.com/1623621572721</pd:targetNamespace>
     <pd:activity name="JMS Queue Requestor">
         <pd:type>com.tibco.plugin.jms.JMSQueueRequestReplyActivity</pd:type>
         <pd:resourceType>ae.activities.JMSQueueRequestReplyActivity</pd:resourceType>
-        <pd:x>283</pd:x>
-        <pd:y>72</pd:y>
+        <pd:x>279</pd:x>
+        <pd:y>83</pd:y>
         <config>
             <PermittedMessageType>Text</PermittedMessageType>
             <SessionAttributes>
                 <transacted>false</transacted>
                 <acknowledgeMode>1</acknowledgeMode>
                 <maxSessions>1</maxSessions>
-                <destination>local.test.queue</destination>
+                <destination>test.queue</destination>
             </SessionAttributes>
             <ConfigurableHeaders>
                 <JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
@@ -34,7 +34,7 @@
         <pd:inputBindings>
             <ns:ActivityInput>
                 <Body>
-                    <xsl:value-of select="&quot;did you get it&quot;"/>
+                    <xsl:value-of select="&quot;Send to Cloud Queue&quot;"/>
                 </Body>
             </ns:ActivityInput>
         </pd:inputBindings>
